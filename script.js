@@ -50,3 +50,18 @@ const generatePassword = (length) => {
 // let lowerChar = Math.floor(Math.random() * 26) + 97
 // let allNum = Math.floor(Math.random() * 10)
 // let upperChar = Math.floor(Math.random() * 26) + 65
+
+let copyIcon = document.getElementById("copy")
+copyIcon.addEventListener('click',
+    () => {
+        if (passBox.value != "" || passBox.length >= 1){
+            navigator.clipboard.writeText(passBox.value);
+            copyIcon.title = "Copied!";
+            copyIcon.innerText = "check"
+            setTimeout(() => {
+                copy.innerText = "content_copy"
+                copy.title = ""
+            }, 2500)
+        }
+    }   
+);
